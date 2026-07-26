@@ -93,7 +93,9 @@
     const open = (shot) => {
       const img = shot.querySelector("img");
       lastFocused = shot;
-      lbImg.src = img.currentSrc || img.src;
+      // currentSrc is whatever srcset picked for a ~366px thumbnail, which would
+      // be badly upscaled full-screen. data-full names the largest rendition.
+      lbImg.src = img.dataset.full || img.currentSrc || img.src;
       lbImg.alt = img.alt;
       lbCap.textContent = img.alt;
       lightbox.classList.add("is-open");
