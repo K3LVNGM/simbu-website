@@ -1024,6 +1024,13 @@ textarea:focus {
   letter-spacing: 0.14em;
   color: var(--ink);
 }
+/* No number has been issued yet. Smaller and muted so the row reads as pending
+   rather than as a value someone should try to pay to. */
+.lipa__value--pending {
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: rgba(0, 71, 49, 0.6);
+}
 .btn--small { padding: 0.7rem 1.1rem; font-size: 0.6875rem; }
 
 .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 1rem; }

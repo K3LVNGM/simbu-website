@@ -136,25 +136,6 @@
     });
   }
 
-  /* ---------- campaign: copy Lipa number ---------- */
-
-  const copyBtn = document.querySelector("[data-copy]");
-  if (copyBtn) {
-    copyBtn.addEventListener("click", async () => {
-      const value = copyBtn.dataset.copy;
-      const original = copyBtn.textContent;
-      try {
-        await navigator.clipboard.writeText(value);
-        copyBtn.textContent = "Copied";
-      } catch {
-        copyBtn.textContent = "Copy failed";
-      }
-      setTimeout(() => {
-        copyBtn.textContent = original;
-      }, 1800);
-    });
-  }
-
   /* ---------- share buttons ---------- */
 
   document.querySelectorAll("[data-share]").forEach((btn) => {
