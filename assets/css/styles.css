@@ -157,7 +157,11 @@ p:last-child { margin-bottom: 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  margin: 0 0 1.35rem;
+  /* The eyebrow labels the heading under it — all 16 uses sit directly on one.
+     At 1.35rem it cleared the heading by as much as the deck below it did, so
+     the three lines read as an evenly spaced stack rather than a label, a
+     heading and its deck. Half the interval binds it to what it names. */
+  margin: 0 0 0.75rem;
 }
 .eyebrow::before {
   content: "";
