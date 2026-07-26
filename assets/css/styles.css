@@ -996,9 +996,20 @@ textarea:focus {
   background: rgb(var(--gold-rgb) / 0.1);
   padding: 1rem var(--space-md);
   font-size: 0.9375rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
-.form-status[hidden] { display: none; }
+/* Collapsed rather than display:none, so the live region stays in the
+   accessibility tree between submissions and the confirmation is announced. */
+.form-status:empty {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* The newsletter status sits above its input row; the contact one follows
+   the submit button, where the visitor is already looking. */
+.form-status:first-child { margin-top: 0; margin-bottom: 1.5rem; }
 
 /* newsletter */
 .newsletter {

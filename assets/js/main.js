@@ -169,11 +169,12 @@
       e.preventDefault();
       if (!form.reportValidity()) return;
       if (status) {
-        status.hidden = false;
+        // The element is a live region from parse time and collapses while
+        // empty, so only its text changes here. Creating the region and
+        // filling it in the same breath is what screen readers miss.
         status.textContent =
           form.dataset.successMessage ||
           "Thank you — your message has been recorded.";
-        status.setAttribute("role", "status");
       }
       form.reset();
     });
