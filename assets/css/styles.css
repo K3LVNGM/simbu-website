@@ -483,12 +483,21 @@ p:last-child { margin-bottom: 0; }
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: auto auto auto;
   gap: 1px;
   background: rgb(var(--white-rgb) / 0.1);
 }
+/* Values wrap at different lengths — "2025 & 2026" takes two lines where
+   "Silver" takes one — which pushed that cell's label and meta a full line
+   below its neighbours'. Subgrid puts value, label and meta on shared rows,
+   so the three baselines hold across the strip however the values break. */
 .stat {
   background: var(--ink);
   padding: clamp(2rem, 4vw, 3.25rem) clamp(1.25rem, 2.5vw, 2rem);
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
 }
 .stat__value {
   font-family: var(--font-display);
@@ -510,7 +519,9 @@ p:last-child { margin-bottom: 0; }
   color: rgb(var(--cream-rgb) / 0.52);
 }
 
-@media (max-width: 780px) {
+/* Collapses with .grid--4 rather than 220px later, so the proof strip stops
+   holding four ~200px columns while the page around it is already one. */
+@media (max-width: 1000px) {
   .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
