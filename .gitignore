@@ -4,3 +4,7 @@ playwright-report/
 .DS_Store
 Thumbs.db
 *.swp
+
+# impeccable: share the rule config, keep machine-local state out
+.impeccable/hook.cache.json
+.impeccable/config.local.json

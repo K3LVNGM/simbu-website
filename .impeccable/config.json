@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "gallery.html"
+        ],
+        "createdAt": "2026-07-26T08:47:24.660Z",
+        "reason": "Lightbox img is a JS-populated template inside a display:none container; main.js sets src before the dialog is shown"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-07-26T08:58:47.328Z",
+        "reason": "Source base44 site uses Inter for body; rebuild preserves its typography"
+      },
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "createdAt": "2026-07-26T08:58:47.543Z",
+        "reason": "Source base44 site uses Fraunces for headings; rebuild preserves its typography"
+      }
+    ]
+  }
+}
