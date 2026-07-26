@@ -979,14 +979,14 @@ textarea:focus {
   border-radius: var(--radius);
   padding: clamp(1.5rem, 2.5vw, 2rem);
 }
-.info__card h3 {
+.info__card :is(h2, h3) {
   font-size: 1.15rem;
   margin-bottom: 0.65rem;
   display: flex;
   align-items: center;
   gap: 0.65rem;
 }
-.info__card h3 svg { width: 1.05rem; height: 1.05rem; color: var(--accent); flex: none; }
+.info__card :is(h2, h3) svg { width: 1.05rem; height: 1.05rem; color: var(--accent); flex: none; }
 .info__card p { font-size: 0.9375rem; color: rgba(0, 71, 49, 0.76); }
 .info__card strong { font-weight: 600; color: var(--ink); }
 .info__links { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.35rem; }
@@ -1172,7 +1172,7 @@ textarea:focus {
 }
 .footer .brand__word { color: var(--cream); }
 .footer__blurb { margin: 1.35rem 0 1.75rem; max-width: 26rem; }
-.footer h4 {
+.footer .footer__heading {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
