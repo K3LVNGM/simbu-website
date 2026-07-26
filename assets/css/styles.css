@@ -1046,6 +1046,15 @@ textarea:focus {
    M-Pesa panel (campaign)
    ========================================================================== */
 
+.donate__title {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  margin-bottom: 0.65rem;
+}
+.donate__intro {
+  color: rgb(var(--ink-rgb) / 0.76);
+  font-size: 0.9688rem;
+  margin-bottom: 1.75rem;
+}
 .donate {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
